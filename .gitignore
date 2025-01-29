@@ -8,3 +8,8 @@ wheels/
 
 # Virtual environments
 .venv
+
+# Directories
+data/
+output_pipeline/
+
