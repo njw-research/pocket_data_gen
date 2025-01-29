@@ -34,10 +34,11 @@ This project implements a three-stage computational workflow for enzyme engineer
 
 ```bash
 # Create and activate conda environment
-conda create -n enzyme_design python=3.9
+conda create -n enzyme_design python=3.11
 conda activate enzyme_design
 
 # Install dependencies using uv for speed
+conda install uv
 uv pip install -r requirements.txt
 ```
 
