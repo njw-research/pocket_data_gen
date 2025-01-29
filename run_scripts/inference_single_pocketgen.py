@@ -1,19 +1,19 @@
 from xyme_tools.structure_generation import (
     StructureGenerationInput,
-    StructureGenerationOutput,
     PocketGen,
 )
-from xyme_tools.general.custom_typing import subdir_to_path, path_to_subdir
+from xyme_tools.general.custom_typing import path_to_subdir
 from xyme_tools.general.utils import set_working_dir
 
-set_working_dir("./pipeline_output")
+set_working_dir("./output_pipeline")
 
 pg = PocketGen()
 
 input_data_list = [
     StructureGenerationInput(
-        pdb_file = './data/processed_pdbs/6osz/6osz_final.pdb',
-        output_subdir = path_to_subdir('./pipeline_output/test/pocketgen')
+        pdb_file = './data/pdbs/initial_clean_pdbs/6OSZ/6OSZ_altloc_removed.pdb',
+        output_subdir = path_to_subdir('./output_pipeline/pocketgen'),
+        sdf_file = './data/ligand_sdf/LTV.sdf'
     ),
 ]
 
