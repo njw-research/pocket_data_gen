@@ -1,0 +1,107 @@
+[
+    {
+        "pdb_name": "1BU8_chain_A",
+        "sdf_name": "ester",
+        "output_dir": "vina_output_test/vina_prep_20250131_135526/ester/1BU8_chain_A",
+        "error": "prepare_ligand() got an unexpected keyword argument 'target_com'",
+        "status": "failed"
+    },
+    {
+        "pdb_name": "1AKN_chain_A",
+        "sdf_name": "ester",
+        "output_dir": "vina_output_test/vina_prep_20250131_135526/ester/1AKN_chain_A",
+        "error": "prepare_ligand() got an unexpected keyword argument 'target_com'",
+        "status": "failed"
+    },
+    {
+        "pdb_name": "1CRL_chain_A",
+        "sdf_name": "ester",
+        "output_dir": "vina_output_test/vina_prep_20250131_135526/ester/1CRL_chain_A",
+        "error": "prepare_ligand() got an unexpected keyword argument 'target_com'",
+        "status": "failed"
+    },
+    {
+        "pdb_name": "1AQL_chain_A",
+        "sdf_name": "ester",
+        "output_dir": "vina_output_test/vina_prep_20250131_135526/ester/1AQL_chain_A",
+        "error": "prepare_ligand() got an unexpected keyword argument 'target_com'",
+        "status": "failed"
+    },
+    {
+        "pdb_name": "1CLE_chain_A",
+        "sdf_name": "ester",
+        "output_dir": "vina_output_test/vina_prep_20250131_135526/ester/1CLE_chain_A",
+        "error": "prepare_ligand() got an unexpected keyword argument 'target_com'",
+        "status": "failed"
+    },
+    {
+        "pdb_name": "1BU8_chain_A",
+        "sdf_name": "triacylglycerol",
+        "output_dir": "vina_output_test/vina_prep_20250131_135526/triacylglycerol/1BU8_chain_A",
+        "error": "prepare_ligand() got an unexpected keyword argument 'target_com'",
+        "status": "failed"
+    },
+    {
+        "pdb_name": "1AKN_chain_A",
+        "sdf_name": "triacylglycerol",
+        "output_dir": "vina_output_test/vina_prep_20250131_135526/triacylglycerol/1AKN_chain_A",
+        "error": "prepare_ligand() got an unexpected keyword argument 'target_com'",
+        "status": "failed"
+    },
+    {
+        "pdb_name": "1CRL_chain_A",
+        "sdf_name": "triacylglycerol",
+        "output_dir": "vina_output_test/vina_prep_20250131_135526/triacylglycerol/1CRL_chain_A",
+        "error": "prepare_ligand() got an unexpected keyword argument 'target_com'",
+        "status": "failed"
+    },
+    {
+        "pdb_name": "1AQL_chain_A",
+        "sdf_name": "triacylglycerol",
+        "output_dir": "vina_output_test/vina_prep_20250131_135526/triacylglycerol/1AQL_chain_A",
+        "error": "prepare_ligand() got an unexpected keyword argument 'target_com'",
+        "status": "failed"
+    },
+    {
+        "pdb_name": "1CLE_chain_A",
+        "sdf_name": "triacylglycerol",
+        "output_dir": "vina_output_test/vina_prep_20250131_135526/triacylglycerol/1CLE_chain_A",
+        "error": "prepare_ligand() got an unexpected keyword argument 'target_com'",
+        "status": "failed"
+    },
+    {
+        "pdb_name": "1BU8_chain_A",
+        "sdf_name": "diacylglycerol",
+        "output_dir": "vina_output_test/vina_prep_20250131_135526/diacylglycerol/1BU8_chain_A",
+        "error": "prepare_ligand() got an unexpected keyword argument 'target_com'",
+        "status": "failed"
+    },
+    {
+        "pdb_name": "1AKN_chain_A",
+        "sdf_name": "diacylglycerol",
+        "output_dir": "vina_output_test/vina_prep_20250131_135526/diacylglycerol/1AKN_chain_A",
+        "error": "prepare_ligand() got an unexpected keyword argument 'target_com'",
+        "status": "failed"
+    },
+    {
+        "pdb_name": "1CRL_chain_A",
+        "sdf_name": "diacylglycerol",
+        "output_dir": "vina_output_test/vina_prep_20250131_135526/diacylglycerol/1CRL_chain_A",
+        "error": "prepare_ligand() got an unexpected keyword argument 'target_com'",
+        "status": "failed"
+    },
+    {
+        "pdb_name": "1AQL_chain_A",
+        "sdf_name": "diacylglycerol",
+        "output_dir": "vina_output_test/vina_prep_20250131_135526/diacylglycerol/1AQL_chain_A",
+        "error": "prepare_ligand() got an unexpected keyword argument 'target_com'",
+        "status": "failed"
+    },
+    {
+        "pdb_name": "1CLE_chain_A",
+        "sdf_name": "diacylglycerol",
+        "output_dir": "vina_output_test/vina_prep_20250131_135526/diacylglycerol/1CLE_chain_A",
+        "error": "prepare_ligand() got an unexpected keyword argument 'target_com'",
+        "status": "failed"
+    }
+]

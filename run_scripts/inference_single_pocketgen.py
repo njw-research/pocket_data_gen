@@ -11,7 +11,7 @@ pg = PocketGen()
 
 input_data_list = [
     StructureGenerationInput(
-        pdb_file = './data/pdbs/initial_clean_pdbs/6OSZ/6OSZ_altloc_removed.pdb',
+        pdb_file = './data/pdbs/initial_clean_pdbs_chain_A/6OR3_chain_A/6OR3_altloc_removed.pdb',
         output_subdir = path_to_subdir('./output_pipeline/pocketgen'),
         sdf_file = './data/ligand_sdf/LTV.sdf'
     ),

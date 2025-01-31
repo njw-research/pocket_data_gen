@@ -1,0 +1,197 @@
+[
+    {
+        "pdb_name": "1BU8_chain_A",
+        "sdf_name": "ester",
+        "output_dir": "vina_output_test/vina_prep_20250131_135658/ester/1BU8_chain_A",
+        "enzyme_pdbqt": "vina_output_test/vina_prep_20250131_135658/ester/1BU8_chain_A/1BU8_altloc_removed_com.pdbqt",
+        "ligand_pdbqt": "vina_output_test/vina_prep_20250131_135658/ester/1BU8_chain_A/ester_aligned.pdbqt",
+        "active_site_center": [
+            -2.7713334560394287,
+            3.6096668243408203,
+            -8.041000366210938
+        ],
+        "status": "completed"
+    },
+    {
+        "pdb_name": "1AKN_chain_A",
+        "sdf_name": "ester",
+        "output_dir": "vina_output_test/vina_prep_20250131_135658/ester/1AKN_chain_A",
+        "enzyme_pdbqt": "vina_output_test/vina_prep_20250131_135658/ester/1AKN_chain_A/1AKN_altloc_removed_com.pdbqt",
+        "ligand_pdbqt": "vina_output_test/vina_prep_20250131_135658/ester/1AKN_chain_A/ester_aligned.pdbqt",
+        "active_site_center": [
+            5.726333141326904,
+            6.013000011444092,
+            1.898999810218811
+        ],
+        "status": "completed"
+    },
+    {
+        "pdb_name": "1CRL_chain_A",
+        "sdf_name": "ester",
+        "output_dir": "vina_output_test/vina_prep_20250131_135658/ester/1CRL_chain_A",
+        "enzyme_pdbqt": "vina_output_test/vina_prep_20250131_135658/ester/1CRL_chain_A/1CRL_altloc_removed_com.pdbqt",
+        "ligand_pdbqt": "vina_output_test/vina_prep_20250131_135658/ester/1CRL_chain_A/ester_aligned.pdbqt",
+        "active_site_center": [
+            -6.802000045776367,
+            -4.230666637420654,
+            4.7176666259765625
+        ],
+        "status": "completed"
+    },
+    {
+        "pdb_name": "1AQL_chain_A",
+        "sdf_name": "ester",
+        "output_dir": "vina_output_test/vina_prep_20250131_135658/ester/1AQL_chain_A",
+        "enzyme_pdbqt": "vina_output_test/vina_prep_20250131_135658/ester/1AQL_chain_A/1AQL_altloc_removed_com.pdbqt",
+        "ligand_pdbqt": "vina_output_test/vina_prep_20250131_135658/ester/1AQL_chain_A/ester_aligned.pdbqt",
+        "active_site_center": [
+            3.128999710083008,
+            6.297667026519775,
+            4.644999980926514
+        ],
+        "status": "completed"
+    },
+    {
+        "pdb_name": "1CLE_chain_A",
+        "sdf_name": "ester",
+        "output_dir": "vina_output_test/vina_prep_20250131_135658/ester/1CLE_chain_A",
+        "enzyme_pdbqt": "vina_output_test/vina_prep_20250131_135658/ester/1CLE_chain_A/1CLE_altloc_removed_com.pdbqt",
+        "ligand_pdbqt": "vina_output_test/vina_prep_20250131_135658/ester/1CLE_chain_A/ester_aligned.pdbqt",
+        "active_site_center": [
+            -7.356333255767822,
+            5.261666774749756,
+            -2.2339999675750732
+        ],
+        "status": "completed"
+    },
+    {
+        "pdb_name": "1BU8_chain_A",
+        "sdf_name": "triacylglycerol",
+        "output_dir": "vina_output_test/vina_prep_20250131_135658/triacylglycerol/1BU8_chain_A",
+        "enzyme_pdbqt": "vina_output_test/vina_prep_20250131_135658/triacylglycerol/1BU8_chain_A/1BU8_altloc_removed_com.pdbqt",
+        "ligand_pdbqt": "vina_output_test/vina_prep_20250131_135658/triacylglycerol/1BU8_chain_A/triacylglycerol_aligned.pdbqt",
+        "active_site_center": [
+            -2.7713334560394287,
+            3.6096668243408203,
+            -8.041000366210938
+        ],
+        "status": "completed"
+    },
+    {
+        "pdb_name": "1AKN_chain_A",
+        "sdf_name": "triacylglycerol",
+        "output_dir": "vina_output_test/vina_prep_20250131_135658/triacylglycerol/1AKN_chain_A",
+        "enzyme_pdbqt": "vina_output_test/vina_prep_20250131_135658/triacylglycerol/1AKN_chain_A/1AKN_altloc_removed_com.pdbqt",
+        "ligand_pdbqt": "vina_output_test/vina_prep_20250131_135658/triacylglycerol/1AKN_chain_A/triacylglycerol_aligned.pdbqt",
+        "active_site_center": [
+            5.726333141326904,
+            6.013000011444092,
+            1.898999810218811
+        ],
+        "status": "completed"
+    },
+    {
+        "pdb_name": "1CRL_chain_A",
+        "sdf_name": "triacylglycerol",
+        "output_dir": "vina_output_test/vina_prep_20250131_135658/triacylglycerol/1CRL_chain_A",
+        "enzyme_pdbqt": "vina_output_test/vina_prep_20250131_135658/triacylglycerol/1CRL_chain_A/1CRL_altloc_removed_com.pdbqt",
+        "ligand_pdbqt": "vina_output_test/vina_prep_20250131_135658/triacylglycerol/1CRL_chain_A/triacylglycerol_aligned.pdbqt",
+        "active_site_center": [
+            -6.802000045776367,
+            -4.230666637420654,
+            4.7176666259765625
+        ],
+        "status": "completed"
+    },
+    {
+        "pdb_name": "1AQL_chain_A",
+        "sdf_name": "triacylglycerol",
+        "output_dir": "vina_output_test/vina_prep_20250131_135658/triacylglycerol/1AQL_chain_A",
+        "enzyme_pdbqt": "vina_output_test/vina_prep_20250131_135658/triacylglycerol/1AQL_chain_A/1AQL_altloc_removed_com.pdbqt",
+        "ligand_pdbqt": "vina_output_test/vina_prep_20250131_135658/triacylglycerol/1AQL_chain_A/triacylglycerol_aligned.pdbqt",
+        "active_site_center": [
+            3.128999710083008,
+            6.297667026519775,
+            4.644999980926514
+        ],
+        "status": "completed"
+    },
+    {
+        "pdb_name": "1CLE_chain_A",
+        "sdf_name": "triacylglycerol",
+        "output_dir": "vina_output_test/vina_prep_20250131_135658/triacylglycerol/1CLE_chain_A",
+        "enzyme_pdbqt": "vina_output_test/vina_prep_20250131_135658/triacylglycerol/1CLE_chain_A/1CLE_altloc_removed_com.pdbqt",
+        "ligand_pdbqt": "vina_output_test/vina_prep_20250131_135658/triacylglycerol/1CLE_chain_A/triacylglycerol_aligned.pdbqt",
+        "active_site_center": [
+            -7.356333255767822,
+            5.261666774749756,
+            -2.2339999675750732
+        ],
+        "status": "completed"
+    },
+    {
+        "pdb_name": "1BU8_chain_A",
+        "sdf_name": "diacylglycerol",
+        "output_dir": "vina_output_test/vina_prep_20250131_135658/diacylglycerol/1BU8_chain_A",
+        "enzyme_pdbqt": "vina_output_test/vina_prep_20250131_135658/diacylglycerol/1BU8_chain_A/1BU8_altloc_removed_com.pdbqt",
+        "ligand_pdbqt": "vina_output_test/vina_prep_20250131_135658/diacylglycerol/1BU8_chain_A/diacylglycerol_aligned.pdbqt",
+        "active_site_center": [
+            -2.7713334560394287,
+            3.6096668243408203,
+            -8.041000366210938
+        ],
+        "status": "completed"
+    },
+    {
+        "pdb_name": "1AKN_chain_A",
+        "sdf_name": "diacylglycerol",
+        "output_dir": "vina_output_test/vina_prep_20250131_135658/diacylglycerol/1AKN_chain_A",
+        "enzyme_pdbqt": "vina_output_test/vina_prep_20250131_135658/diacylglycerol/1AKN_chain_A/1AKN_altloc_removed_com.pdbqt",
+        "ligand_pdbqt": "vina_output_test/vina_prep_20250131_135658/diacylglycerol/1AKN_chain_A/diacylglycerol_aligned.pdbqt",
+        "active_site_center": [
+            5.726333141326904,
+            6.013000011444092,
+            1.898999810218811
+        ],
+        "status": "completed"
+    },
+    {
+        "pdb_name": "1CRL_chain_A",
+        "sdf_name": "diacylglycerol",
+        "output_dir": "vina_output_test/vina_prep_20250131_135658/diacylglycerol/1CRL_chain_A",
+        "enzyme_pdbqt": "vina_output_test/vina_prep_20250131_135658/diacylglycerol/1CRL_chain_A/1CRL_altloc_removed_com.pdbqt",
+        "ligand_pdbqt": "vina_output_test/vina_prep_20250131_135658/diacylglycerol/1CRL_chain_A/diacylglycerol_aligned.pdbqt",
+        "active_site_center": [
+            -6.802000045776367,
+            -4.230666637420654,
+            4.7176666259765625
+        ],
+        "status": "completed"
+    },
+    {
+        "pdb_name": "1AQL_chain_A",
+        "sdf_name": "diacylglycerol",
+        "output_dir": "vina_output_test/vina_prep_20250131_135658/diacylglycerol/1AQL_chain_A",
+        "enzyme_pdbqt": "vina_output_test/vina_prep_20250131_135658/diacylglycerol/1AQL_chain_A/1AQL_altloc_removed_com.pdbqt",
+        "ligand_pdbqt": "vina_output_test/vina_prep_20250131_135658/diacylglycerol/1AQL_chain_A/diacylglycerol_aligned.pdbqt",
+        "active_site_center": [
+            3.128999710083008,
+            6.297667026519775,
+            4.644999980926514
+        ],
+        "status": "completed"
+    },
+    {
+        "pdb_name": "1CLE_chain_A",
+        "sdf_name": "diacylglycerol",
+        "output_dir": "vina_output_test/vina_prep_20250131_135658/diacylglycerol/1CLE_chain_A",
+        "enzyme_pdbqt": "vina_output_test/vina_prep_20250131_135658/diacylglycerol/1CLE_chain_A/1CLE_altloc_removed_com.pdbqt",
+        "ligand_pdbqt": "vina_output_test/vina_prep_20250131_135658/diacylglycerol/1CLE_chain_A/diacylglycerol_aligned.pdbqt",
+        "active_site_center": [
+            -7.356333255767822,
+            5.261666774749756,
+            -2.2339999675750732
+        ],
+        "status": "completed"
+    }
+]

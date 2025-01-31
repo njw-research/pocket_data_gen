@@ -1,9 +1,11 @@
 import os
-
-from Bio.PDB import PDBParser, PDBIO
+import pandas as pd
+import numpy as np
+import ast
 import logging
+from pathlib import Path
+from Bio.PDB import PDBParser, PDBIO
 from xyme_tools.structure_handling.utils import download_pdb_to_local, ResidueSelect, remove_altloc #, filter_to_pdb_hetatm_types
-
 
 def filter_to_pdb_hetatm_types(
     pdb_f: str, hetatms: list[dict], chain:str = None, f_out: str = None
@@ -81,67 +83,168 @@ def extract_chain(pdb_file: str, chain_id: str, output_file: str = None) -> str:
 
    return output_file
 
+def centre_of_mass_shift_pdb(input_pdb, output_pdb):
+    """
+    Shift PDB coordinates to center of mass using BioPython
+    
+    Parameters:
+    -----------
+    input_pdb : str
+        Input PDB file path
+    output_pdb : str
+        Output PDB file path
+    """
+    from Bio import PDB
+    
+    # Set up parser
+    parser = PDB.PDBParser(QUIET=True)  # Added QUIET=True to suppress warnings
+    structure = parser.get_structure('protein', input_pdb)
+    
+    # Calculate COM
+    com = structure.center_of_mass()
+    
+    # Apply shift
+    for atom in structure.get_atoms():
+        atom.coord = atom.coord - com
+    
+    # Save shifted structure
+    io = PDB.PDBIO()
+    io.set_structure(structure)
+    io.save(output_pdb)
+    
+    return output_pdb
 
-def process_pdb_list(pdb_list_file: str, save_loc: str, key_residues_dict: list = None, chain: str = None) -> None:
-   """
-   Process a list of PDB IDs by downloading, filtering and cleaning the structures.
-   
-   Args:
-       pdb_list_file (str): Path to file containing PDB IDs (one per line)
-       save_loc (str): Base directory to save processed PDB files
-       key_residues_dict (list): List of dictionaries with residue info for filtering
-       chain (str, optional): Specific chain to filter for. If None, keeps all chains.
-   """
-   # Create save directory if it doesn't exist
-   if not os.path.exists(save_loc):
-       os.makedirs(save_loc)
-       
-   # Read PDB list
-   with open(pdb_list_file, 'r') as f:
-       pdb_list = [line.strip() for line in f.readlines()]
-   
-   # Process each PDB
-   for pdb in pdb_list:
-       print(f"Processing {pdb}...")
-       
-       # Create PDB-specific directory
-       pdb_dir = os.path.join(save_loc, f"{pdb}")
-       if chain:
-           pdb_dir = os.path.join(save_loc, f"{pdb}_chain_{chain}")
-       if not os.path.exists(pdb_dir):
-           os.makedirs(pdb_dir)
-           
-       try:
-           # Download PDB
-           pdb_f = download_pdb_to_local(pdb, save_dir=pdb_dir)
 
-           # Extract specific chain if requested
-           if chain:
-               chain_pdb = os.path.join(pdb_dir, f"{pdb}_chain_{chain}.pdb")
-               pdb_f = extract_chain(pdb_f, chain, chain_pdb)
-           
-           # Filter HETATM types
-           pdb_filtered_f = filter_to_pdb_hetatm_types(
-               pdb_f,
-               hetatms=key_residues_dict if key_residues_dict else [],
-               chain=chain,
-               f_out=os.path.join(pdb_dir, f"{pdb}_filtered.pdb")
-           )
+def centre_of_mass_shift_sdf(input_sdf: str, 
+                             output_sdf: str, 
+                             target_com: np.array = None):
+    """
+    Shift SDF coordinates to center of mass using RDKit
+    
+    Parameters:
+    -----------
+    input_sdf : str
+        Input SDF file path
+    output_sdf : str
+        Output SDF file path
+    """
+    from rdkit import Chem
+    import numpy as np
+    
+    # Read molecule from SDF
+    mol = Chem.SDMolSupplier(input_sdf, removeHs=False)[0]
+    if mol is None:
+        raise ValueError(f"Could not read molecule from {input_sdf}")
+    
+    # Get conformer
+    conf = mol.GetConformer()
+    
+    # Calculate COM
+    com = np.zeros(3)
+    total_mass = 0.0
+    
+    for atom in mol.GetAtoms():
+        mass = atom.GetMass()
+        pos = conf.GetAtomPosition(atom.GetIdx())
+        coord = np.array([pos.x, pos.y, pos.z])
+        com += mass * coord
+        total_mass += mass
+    
+    com /= total_mass
+    
+    # Apply shift to all atoms
+    for atom in mol.GetAtoms():
+        pos = conf.GetAtomPosition(atom.GetIdx())
+        coord = np.array([pos.x, pos.y, pos.z])
+        new_coord = coord - com 
+        if target_com is not None: 
+            new_coord = new_coord + target_com
+        conf.SetAtomPosition(atom.GetIdx(), new_coord)
+    
+    # Save shifted structure
+    writer = Chem.SDWriter(output_sdf)
+    writer.write(mol)
+    writer.close()
+    
+    return output_sdf
 
-           
-           # Remove alternate locations
-           remove_altloc(
-               pdb_filtered_f,
-               output_pdb=os.path.join(pdb_dir, f"{pdb}_altloc_removed.pdb")
-           )
-           
-           print(f"Successfully processed {pdb}")
-           
-       except Exception as e:
-           print(f"Error processing {pdb}: {str(e)}")
-           continue
-       
-       
+        
+def process_pdb_list(csv_file: str, 
+                    save_loc: str, 
+                    key_residues_dict: list = None, 
+                    chain: str = None
+                    ) -> None:
+    """
+    Process PDB structures and save active site data as NPZ files.
+
+    Args:
+        csv_file (str): Path to CSV file containing PDB data
+        save_loc (str): Base directory to save processed PDB files
+        key_residues_dict (list): List of dictionaries with residue info for filtering
+        chain (str, optional): Specific chain to filter for. If None, keeps all chains.
+    """
+    # Set up logging
+    logging.basicConfig(level=logging.INFO,
+                       format='%(asctime)s - %(levelname)s - %(message)s')
+    logger = logging.getLogger(__name__)
+
+    # Create save directory
+    save_loc = Path(save_loc)
+    save_loc.mkdir(parents=True, exist_ok=True)
+    
+    # Read CSV file
+    try:
+        df = pd.read_csv(csv_file)
+        logger.info(f"Successfully loaded {len(df)} entries from CSV")
+    except Exception as e:
+        logger.error(f"Error reading CSV file: {str(e)}")
+        raise
+    
+    # Process each PDB
+    for idx, row in df.iterrows():
+        pdb = row['rcsb_id']
+        logger.info(f"Processing {pdb}...")
+        
+        try:
+            # Create PDB-specific directory
+            pdb_dir = save_loc / f"{pdb}"
+            if chain:
+                pdb_dir = save_loc / f"{pdb}_chain_{chain}"
+            pdb_dir.mkdir(parents=True, exist_ok=True)
+            
+            # Download and process PDB
+            pdb_f = download_pdb_to_local(pdb, save_dir=str(pdb_dir))
+
+            if chain:
+                chain_pdb = pdb_dir / f"{pdb}_chain_{chain}.pdb"
+                pdb_f = extract_chain(pdb_f, chain, str(chain_pdb))
+
+            pdb_filtered_f = filter_to_pdb_hetatm_types(
+                pdb_f,
+                hetatms=key_residues_dict if key_residues_dict else [],
+                chain=chain,
+                f_out=str(pdb_dir / f"{pdb}_filtered.pdb")
+            )
+            
+            final_pdb = str(pdb_dir / f"{pdb}_altloc_removed.pdb")
+            remove_altloc(pdb_filtered_f, output_pdb=final_pdb)
+            
+            # Parse active site residues
+            act_site = ast.literal_eval(row['pdb_site_resis'])
+            logger.info(f"Active site residues for {pdb}: {act_site}")
+
+            # Save active site residues as simple text file
+            with open(pdb_dir / "active_site.txt", "w") as f:
+                f.write(" ".join(act_site))
+            
+            logger.info(f"Successfully processed {pdb}")
+            
+        except Exception as e:
+            logger.error(f"Error processing {pdb}: {str(e)}")
+            continue
+
+
+
 # # Usage examples:
 # # Process all chains
 # process_pdb_list(
@@ -157,3 +260,4 @@ def process_pdb_list(pdb_list_file: str, save_loc: str, key_residues_dict: list 
 #     key_residues_dict=[],
 #     chain='A'
 # )
+
