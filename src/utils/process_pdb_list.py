@@ -83,6 +83,7 @@ def extract_chain(pdb_file: str, chain_id: str, output_file: str = None) -> str:
 
    return output_file
 
+
 def centre_of_mass_shift_pdb(input_pdb, output_pdb):
     """
     Shift PDB coordinates to center of mass using BioPython
@@ -113,6 +114,7 @@ def centre_of_mass_shift_pdb(input_pdb, output_pdb):
     io.save(output_pdb)
     
     return output_pdb
+
 
 
 def centre_of_mass_shift_sdf(input_sdf: str, 
@@ -167,6 +169,7 @@ def centre_of_mass_shift_sdf(input_sdf: str,
     writer.close()
     
     return output_sdf
+
 
         
 def process_pdb_list(csv_file: str, 

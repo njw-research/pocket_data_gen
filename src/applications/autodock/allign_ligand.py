@@ -40,7 +40,7 @@ def align_ligand(input_sdf: str,
     total_mass = 0.0
     
     for atom in mol.GetAtoms():
-        mass = atom.GetMass()
+        mass = 1.0 # atom.GetMass()
         pos = conf.GetAtomPosition(atom.GetIdx())
         coord = np.array([pos.x, pos.y, pos.z])
         ligand_com += mass * coord
@@ -74,15 +74,15 @@ def align_ligand(input_sdf: str,
     for atom in mol.GetAtoms():
         pos = conf.GetAtomPosition(atom.GetIdx())
         coord = np.array([pos.x, pos.y, pos.z])
-        
+
         # Translate to origin (relative to ligand COM)
-        coord = coord - ligand_com
+        coord = coord - oxygen_com
         
         # Apply rotation
         rotated_coord = rotation_matrix @ coord
         
         # Translate oxygen COM to active site COM
-        final_coord = rotated_coord + active_site_com
+        final_coord = rotated_coord + active_site_com # + oxygen_com
         
         # Update position
         conf.SetAtomPosition(atom.GetIdx(), final_coord)
@@ -130,6 +130,8 @@ def get_alignment_rotation(v1: np.ndarray, v2: np.ndarray) -> np.ndarray:
     
     # Create rotation matrix
     return Rotation.from_rotvec(angle * rotation_axis).as_matrix()
+
+
 
 def prepare_ligand(ligand_path: str,
                     active_site_com: np.ndarray,
@@ -191,6 +193,7 @@ def prepare_ligand(ligand_path: str,
         print(f"Error preparing ligand: {str(e)}")
         raise
 
+
 # # Example usage
 # if __name__ == "__main__":
 #     # Example coordinates
@@ -205,81 +208,3 @@ def prepare_ligand(ligand_path: str,
 #     )
 
 
-
-
-# def align_ligand(input_sdf: str, 
-#                 output_sdf: str,
-#                 protein_com: np.ndarray,
-#                 active_site_com: np.ndarray) -> str:
-#     """
-#     Align ligand based on protein and active site vectors
-#     Aligns oxygen COM with active site COM and orients ligand accordingly
-#     """
-#     # Read molecule
-#     mol = Chem.SDMolSupplier(input_sdf, removeHs=False)[0]
-#     if mol is None:
-#         raise ValueError(f"Could not read molecule from {input_sdf}")
-    
-#     # Get conformer
-#     conf = mol.GetConformer()
-    
-#     # Calculate ligand center of mass
-#     ligand_com = np.zeros(3)
-#     total_mass = 0.0
-    
-#     for atom in mol.GetAtoms():
-#         mass = atom.GetMass()
-#         pos = conf.GetAtomPosition(atom.GetIdx())
-#         coord = np.array([pos.x, pos.y, pos.z])
-#         ligand_com += mass * coord
-#         total_mass += mass
-    
-#     ligand_com /= total_mass
-    
-#     # Calculate oxygen atoms center of mass
-#     oxygen_coords = []
-#     for atom in mol.GetAtoms():
-#         if atom.GetSymbol() == 'O':
-#             pos = conf.GetAtomPosition(atom.GetIdx())
-#             oxygen_coords.append(np.array([pos.x, pos.y, pos.z]))
-    
-#     if not oxygen_coords:
-#         raise ValueError("No oxygen atoms found in ligand")
-        
-#     oxygen_com = np.mean(oxygen_coords, axis=0)
-    
-#     # Calculate vectors
-#     protein_vector = active_site_com - protein_com
-#     protein_vector = protein_vector / np.linalg.norm(protein_vector)
-    
-#     ligand_vector = ligand_com  - oxygen_com 
-#     ligand_vector = ligand_vector / np.linalg.norm(ligand_vector)
-    
-#     # Calculate rotation matrix to align vectors
-#     rotation_matrix = get_alignment_rotation(ligand_vector, protein_vector)
-    
-#     # Calculate the translation to move oxygen_com to active_site_com
-#     translation_vector = active_site_com - oxygen_com
-    
-#     # Apply rotation and translation to all atoms
-#     for atom in mol.GetAtoms():
-#         pos = conf.GetAtomPosition(atom.GetIdx())
-#         coord = np.array([pos.x, pos.y, pos.z])
-        
-#         # First rotate around oxygen_com
-#         coord_rel_oxygen = coord - oxygen_com
-#         rotated_coord = rotation_matrix @ coord_rel_oxygen
-#         coord = rotated_coord + oxygen_com
-        
-#         # Then translate to align oxygen_com with active_site_com
-#         final_coord = coord + translation_vector
-        
-#         # Update position
-#         conf.SetAtomPosition(atom.GetIdx(), final_coord)
-    
-#     # Write aligned molecule
-#     writer = Chem.SDWriter(output_sdf)
-#     writer.write(mol)
-#     writer.close()
-    
-#     return output_sdf
