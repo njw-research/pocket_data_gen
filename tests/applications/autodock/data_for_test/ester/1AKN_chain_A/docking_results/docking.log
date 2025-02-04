@@ -1,0 +1,120 @@
+2025-02-03 10:34:14,916 - INFO - Loading enzyme from: tests/applications/autodock/data_for_test/ester/1AKN_chain_A/1AKN_altloc_removed_com.pdbqt
+2025-02-03 10:34:14,920 - INFO - Loading enzyme from: tests/applications/autodock/data_for_test/ester/1AQL_chain_A/1AQL_altloc_removed_com.pdbqt
+2025-02-03 10:34:14,951 - INFO - Loading ligand from: tests/applications/autodock/data_for_test/ester/1AKN_chain_A/ester_aligned.pdbqt
+2025-02-03 10:34:14,951 - INFO - Loading ligand from: tests/applications/autodock/data_for_test/ester/1AQL_chain_A/ester_aligned.pdbqt
+2025-02-03 10:34:15,008 - INFO - Computing Vina maps (center=[5.726333141326904, 6.013000011444092, 1.898999810218811], box_size=[40, 40, 40])
+2025-02-03 10:34:15,059 - INFO - Computing Vina maps (center=[3.128999710083008, 6.297667026519775, 4.644999980926514], box_size=[40, 40, 40])
+2025-02-03 10:34:15,949 - INFO - Score before minimization: 130.081 (kcal/mol)
+2025-02-03 10:34:16,829 - INFO - Score before minimization: 161.885 (kcal/mol)
+2025-02-03 10:34:16,830 - INFO - Score after minimization: -1.088 (kcal/mol)
+2025-02-03 10:34:16,831 - INFO - Score after minimization: -0.258 (kcal/mol)
+2025-02-03 10:34:16,831 - INFO - Saved minimized pose to: tests/applications/autodock/data_for_test/ester/1AKN_chain_A/docking_results/minimized_pose.pdbqt
+2025-02-03 10:34:16,831 - INFO - Saved minimized pose to: tests/applications/autodock/data_for_test/ester/1AQL_chain_A/docking_results/minimized_pose.pdbqt
+2025-02-03 10:34:16,832 - INFO - Starting docking (exhaustiveness=32, n_poses=10)
+2025-02-03 10:34:16,832 - INFO - Starting docking (exhaustiveness=32, n_poses=10)
+2025-02-03 10:34:41,434 - INFO - Saved 10 docked poses to: tests/applications/autodock/data_for_test/ester/1AKN_chain_A/docking_results/docked_poses.pdbqt
+2025-02-03 10:34:41,434 - INFO - Saved 10 docked poses to: tests/applications/autodock/data_for_test/ester/1AQL_chain_A/docking_results/docked_poses.pdbqt
+2025-02-03 10:34:41,435 - INFO - Saved scores and energies to: tests/applications/autodock/data_for_test/ester/1AKN_chain_A/docking_results/docking_scores.json
+2025-02-03 10:34:41,435 - INFO - Saved scores and energies to: tests/applications/autodock/data_for_test/ester/1AQL_chain_A/docking_results/docking_scores.json
+2025-02-03 10:34:41,435 - INFO - Docking completed successfully
+2025-02-03 10:34:41,435 - INFO - Docking completed successfully
+2025-02-03 10:40:12,512 - INFO - Loading enzyme from: tests/applications/autodock/data_for_test/ester/1AKN_chain_A/1AKN_altloc_removed_com.pdbqt
+2025-02-03 10:40:12,522 - INFO - Loading enzyme from: tests/applications/autodock/data_for_test/ester/1AQL_chain_A/1AQL_altloc_removed_com.pdbqt
+2025-02-03 10:40:12,538 - INFO - Loading ligand from: tests/applications/autodock/data_for_test/ester/1AKN_chain_A/ester_aligned.pdbqt
+2025-02-03 10:40:12,554 - INFO - Loading ligand from: tests/applications/autodock/data_for_test/ester/1AQL_chain_A/ester_aligned.pdbqt
+2025-02-03 10:40:12,603 - INFO - Computing Vina maps (center=[5.726333141326904, 6.013000011444092, 1.898999810218811], box_size=[40, 40, 40])
+2025-02-03 10:40:13,566 - INFO - Score before minimization: 130.081 (kcal/mol)
+2025-02-03 10:40:13,566 - INFO - Computing Vina maps (center=[3.128999710083008, 6.297667026519775, 4.644999980926514], box_size=[40, 40, 40])
+2025-02-03 10:40:13,567 - INFO - Score after minimization: -1.088 (kcal/mol)
+2025-02-03 10:40:14,446 - INFO - Score before minimization: 161.885 (kcal/mol)
+2025-02-03 10:40:14,447 - INFO - Score after minimization: -0.258 (kcal/mol)
+2025-02-03 10:40:14,447 - INFO - Saved minimized pose to: tests/applications/autodock/data_for_test/ester/1AKN_chain_A/docking_results/minimized_pose.pdbqt
+2025-02-03 10:40:14,448 - INFO - Starting docking (exhaustiveness=32, n_poses=10)
+2025-02-03 10:40:27,586 - INFO - Saved minimized pose to: tests/applications/autodock/data_for_test/ester/1AQL_chain_A/docking_results/minimized_pose.pdbqt
+2025-02-03 10:40:27,587 - INFO - Saved 10 docked poses to: tests/applications/autodock/data_for_test/ester/1AKN_chain_A/docking_results/docked_poses.pdbqt
+2025-02-03 10:40:27,587 - INFO - Starting docking (exhaustiveness=32, n_poses=10)
+2025-02-03 10:40:40,340 - INFO - Saved 10 docked poses to: tests/applications/autodock/data_for_test/ester/1AQL_chain_A/docking_results/docked_poses.pdbqt
+2025-02-03 10:40:40,340 - INFO - Saved scores and energies to: tests/applications/autodock/data_for_test/ester/1AKN_chain_A/docking_results/docking_scores.json
+2025-02-03 10:40:40,341 - INFO - Docking completed successfully
+2025-02-03 10:40:40,349 - INFO - Saved scores and energies to: tests/applications/autodock/data_for_test/ester/1AQL_chain_A/docking_results/docking_scores.json
+2025-02-03 10:40:40,349 - INFO - Docking completed successfully
+2025-02-03 10:43:01,100 - INFO - Loading enzyme from: tests/applications/autodock/data_for_test/ester/1AQL_chain_A/1AQL_altloc_removed_com.pdbqt
+2025-02-03 10:43:01,105 - INFO - Loading enzyme from: tests/applications/autodock/data_for_test/ester/1AKN_chain_A/1AKN_altloc_removed_com.pdbqt
+2025-02-03 10:43:01,138 - INFO - Loading ligand from: tests/applications/autodock/data_for_test/ester/1AQL_chain_A/ester_aligned.pdbqt
+2025-02-03 10:43:01,138 - INFO - Loading ligand from: tests/applications/autodock/data_for_test/ester/1AKN_chain_A/ester_aligned.pdbqt
+2025-02-03 10:43:01,237 - INFO - Computing Vina maps (center=[3.128999710083008, 6.297667026519775, 4.644999980926514], box_size=[40, 40, 40])
+2025-02-03 10:43:01,237 - INFO - Computing Vina maps (center=[5.726333141326904, 6.013000011444092, 1.898999810218811], box_size=[40, 40, 40])
+2025-02-03 10:43:02,138 - INFO - Score before minimization: 161.885 (kcal/mol)
+2025-02-03 10:43:03,048 - INFO - Score before minimization: 130.081 (kcal/mol)
+2025-02-03 10:43:03,049 - INFO - Score after minimization: -0.258 (kcal/mol)
+2025-02-03 10:43:03,049 - INFO - Score after minimization: -1.088 (kcal/mol)
+2025-02-03 10:43:03,050 - INFO - Saved minimized pose to: tests/applications/autodock/data_for_test/ester/1AQL_chain_A/docking_results/minimized_pose.pdbqt
+2025-02-03 10:43:03,051 - INFO - Saved minimized pose to: tests/applications/autodock/data_for_test/ester/1AKN_chain_A/docking_results/minimized_pose.pdbqt
+2025-02-03 10:43:03,051 - INFO - Starting docking (exhaustiveness=32, n_poses=10)
+2025-02-03 10:43:03,051 - INFO - Starting docking (exhaustiveness=32, n_poses=10)
+2025-02-03 10:43:29,416 - INFO - Saved 10 docked poses to: tests/applications/autodock/data_for_test/ester/1AQL_chain_A/docking_results/docked_poses.pdbqt
+2025-02-03 10:43:29,416 - INFO - Saved 10 docked poses to: tests/applications/autodock/data_for_test/ester/1AKN_chain_A/docking_results/docked_poses.pdbqt
+2025-02-03 10:43:29,417 - INFO - Saved scores and energies to: tests/applications/autodock/data_for_test/ester/1AQL_chain_A/docking_results/docking_scores.json
+2025-02-03 10:43:29,417 - INFO - Saved scores and energies to: tests/applications/autodock/data_for_test/ester/1AKN_chain_A/docking_results/docking_scores.json
+2025-02-03 10:43:29,417 - INFO - Docking completed successfully
+2025-02-03 10:43:29,417 - INFO - Docking completed successfully
+2025-02-03 10:44:23,922 - INFO - Loading enzyme from: tests/applications/autodock/data_for_test/ester/1AQL_chain_A/1AQL_altloc_removed_com.pdbqt
+2025-02-03 10:44:23,927 - INFO - Loading enzyme from: tests/applications/autodock/data_for_test/ester/1AKN_chain_A/1AKN_altloc_removed_com.pdbqt
+2025-02-03 10:44:23,959 - INFO - Loading ligand from: tests/applications/autodock/data_for_test/ester/1AQL_chain_A/ester_aligned.pdbqt
+2025-02-03 10:44:23,960 - INFO - Loading ligand from: tests/applications/autodock/data_for_test/ester/1AKN_chain_A/ester_aligned.pdbqt
+2025-02-03 10:44:24,000 - INFO - Computing Vina maps (center=[3.128999710083008, 6.297667026519775, 4.644999980926514], box_size=[40, 40, 40])
+2025-02-03 10:44:24,950 - INFO - Computing Vina maps (center=[5.726333141326904, 6.013000011444092, 1.898999810218811], box_size=[40, 40, 40])
+2025-02-03 10:44:24,951 - INFO - Score before minimization: 161.885 (kcal/mol)
+2025-02-03 10:44:25,869 - INFO - Score after minimization: -0.258 (kcal/mol)
+2025-02-03 10:44:25,869 - INFO - Score before minimization: 130.081 (kcal/mol)
+2025-02-03 10:44:25,869 - INFO - Score after minimization: -1.088 (kcal/mol)
+2025-02-03 10:44:25,870 - INFO - Saved minimized pose to: tests/applications/autodock/data_for_test/ester/1AQL_chain_A/docking_results/minimized_pose.pdbqt
+2025-02-03 10:44:25,870 - INFO - Starting docking (exhaustiveness=32, n_poses=10)
+2025-02-03 10:44:38,096 - INFO - Saved 10 docked poses to: tests/applications/autodock/data_for_test/ester/1AQL_chain_A/docking_results/docked_poses.pdbqt
+2025-02-03 10:44:38,097 - INFO - Saved minimized pose to: tests/applications/autodock/data_for_test/ester/1AKN_chain_A/docking_results/minimized_pose.pdbqt
+2025-02-03 10:44:38,097 - INFO - Starting docking (exhaustiveness=32, n_poses=10)
+2025-02-03 10:44:51,500 - INFO - Saved scores and energies to: tests/applications/autodock/data_for_test/ester/1AQL_chain_A/docking_results/docking_scores.json
+2025-02-03 10:44:51,501 - INFO - Saved 10 docked poses to: tests/applications/autodock/data_for_test/ester/1AKN_chain_A/docking_results/docked_poses.pdbqt
+2025-02-03 10:44:51,501 - INFO - Docking completed successfully
+2025-02-03 10:44:51,516 - INFO - Saved scores and energies to: tests/applications/autodock/data_for_test/ester/1AKN_chain_A/docking_results/docking_scores.json
+2025-02-03 10:44:51,516 - INFO - Docking completed successfully
+2025-02-03 10:46:46,188 - INFO - Loading enzyme from: tests/applications/autodock/data_for_test/ester/1AKN_chain_A/1AKN_altloc_removed_com.pdbqt
+2025-02-03 10:46:46,214 - INFO - Loading ligand from: tests/applications/autodock/data_for_test/ester/1AKN_chain_A/ester_aligned.pdbqt
+2025-02-03 10:46:46,214 - INFO - Loading enzyme from: tests/applications/autodock/data_for_test/ester/1AQL_chain_A/1AQL_altloc_removed_com.pdbqt
+2025-02-03 10:46:46,256 - INFO - Computing Vina maps (center=[5.726333141326904, 6.013000011444092, 1.898999810218811], box_size=[40, 40, 40])
+2025-02-03 10:46:47,205 - INFO - Loading ligand from: tests/applications/autodock/data_for_test/ester/1AQL_chain_A/ester_aligned.pdbqt
+2025-02-03 10:46:47,206 - INFO - Score before minimization: 130.081 (kcal/mol)
+2025-02-03 10:46:47,207 - INFO - Score after minimization: -1.088 (kcal/mol)
+2025-02-03 10:46:47,258 - INFO - Saved minimized pose to: tests/applications/autodock/data_for_test/ester/1AKN_chain_A/docking_results/minimized_pose.pdbqt
+2025-02-03 10:46:47,258 - INFO - Starting docking (exhaustiveness=32, n_poses=10)
+2025-02-03 10:46:59,970 - INFO - Computing Vina maps (center=[3.128999710083008, 6.297667026519775, 4.644999980926514], box_size=[40, 40, 40])
+2025-02-03 10:46:59,970 - INFO - Saved 10 docked poses to: tests/applications/autodock/data_for_test/ester/1AKN_chain_A/docking_results/docked_poses.pdbqt
+2025-02-03 10:47:00,898 - INFO - Score before minimization: 161.885 (kcal/mol)
+2025-02-03 10:47:00,899 - INFO - Score after minimization: -0.258 (kcal/mol)
+2025-02-03 10:47:00,899 - INFO - Saved minimized pose to: tests/applications/autodock/data_for_test/ester/1AQL_chain_A/docking_results/minimized_pose.pdbqt
+2025-02-03 10:47:00,899 - INFO - Saved scores and energies to: tests/applications/autodock/data_for_test/ester/1AKN_chain_A/docking_results/docking_scores.json
+2025-02-03 10:47:00,899 - INFO - Starting docking (exhaustiveness=32, n_poses=10)
+2025-02-03 10:47:00,899 - INFO - Docking completed successfully
+2025-02-03 10:47:13,702 - INFO - Saved 10 docked poses to: tests/applications/autodock/data_for_test/ester/1AQL_chain_A/docking_results/docked_poses.pdbqt
+2025-02-03 10:47:13,702 - INFO - Saved scores and energies to: tests/applications/autodock/data_for_test/ester/1AQL_chain_A/docking_results/docking_scores.json
+2025-02-03 10:47:13,702 - INFO - Docking completed successfully
+2025-02-03 10:48:53,045 - INFO - Loading enzyme from: tests/applications/autodock/data_for_test/ester/1AQL_chain_A/1AQL_altloc_removed_com.pdbqt
+2025-02-03 10:48:53,050 - INFO - Loading enzyme from: tests/applications/autodock/data_for_test/ester/1AKN_chain_A/1AKN_altloc_removed_com.pdbqt
+2025-02-03 10:48:53,083 - INFO - Loading ligand from: tests/applications/autodock/data_for_test/ester/1AKN_chain_A/ester_aligned.pdbqt
+2025-02-03 10:48:53,083 - INFO - Loading ligand from: tests/applications/autodock/data_for_test/ester/1AQL_chain_A/ester_aligned.pdbqt
+2025-02-03 10:48:53,157 - INFO - Computing Vina maps (center=[5.726333141326904, 6.013000011444092, 1.898999810218811], box_size=[40, 40, 40])
+2025-02-03 10:48:53,157 - INFO - Computing Vina maps (center=[3.128999710083008, 6.297667026519775, 4.644999980926514], box_size=[40, 40, 40])
+2025-02-03 10:48:54,067 - INFO - Score before minimization: 130.081 (kcal/mol)
+2025-02-03 10:48:54,975 - INFO - Score before minimization: 161.885 (kcal/mol)
+2025-02-03 10:48:54,976 - INFO - Score after minimization: -1.088 (kcal/mol)
+2025-02-03 10:48:54,976 - INFO - Score after minimization: -0.258 (kcal/mol)
+2025-02-03 10:48:54,977 - INFO - Saved minimized pose to: tests/applications/autodock/data_for_test/ester/1AQL_chain_A/docking_results/minimized_pose.pdbqt
+2025-02-03 10:48:54,977 - INFO - Saved minimized pose to: tests/applications/autodock/data_for_test/ester/1AKN_chain_A/docking_results/minimized_pose.pdbqt
+2025-02-03 10:48:54,977 - INFO - Starting docking (exhaustiveness=32, n_poses=10)
+2025-02-03 10:48:54,977 - INFO - Starting docking (exhaustiveness=32, n_poses=10)
+2025-02-03 10:49:07,141 - INFO - Saved 10 docked poses to: tests/applications/autodock/data_for_test/ester/1AQL_chain_A/docking_results/docked_poses.pdbqt
+2025-02-03 10:49:21,289 - INFO - Saved 10 docked poses to: tests/applications/autodock/data_for_test/ester/1AKN_chain_A/docking_results/docked_poses.pdbqt
+2025-02-03 10:49:21,290 - INFO - Saved scores and energies to: tests/applications/autodock/data_for_test/ester/1AQL_chain_A/docking_results/docking_scores.json
+2025-02-03 10:49:21,290 - INFO - Saved scores and energies to: tests/applications/autodock/data_for_test/ester/1AKN_chain_A/docking_results/docking_scores.json
+2025-02-03 10:49:21,290 - INFO - Docking completed successfully
+2025-02-03 10:49:21,290 - INFO - Docking completed successfully

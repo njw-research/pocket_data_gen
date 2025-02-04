@@ -32,7 +32,7 @@ def generate_conformers(mol, n_conformers=50, random_seed=42):
     params.enforceChirality = True
     
     # Generate conformers
-    n_confs = AllChem.EmbedMultipleConfs(
+    AllChem.EmbedMultipleConfs(
         mol,
         numConfs=n_conformers,
         params=params

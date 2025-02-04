@@ -1,0 +1,36 @@
+{
+    "docking": {
+        "affinity (kcal/mol)": [
+            -6.675,
+            -6.587,
+            -6.576,
+            -6.236,
+            -6.167,
+            -6.124,
+            -6.09,
+            -6.083,
+            -6.054
+        ],
+        "n_successful_poses": 9
+    },
+    "parameters": {
+        "center": [
+            3.128999710083008,
+            6.297667026519775,
+            4.644999980926514
+        ],
+        "box_size": [
+            40,
+            40,
+            40
+        ],
+        "exhaustiveness": 32,
+        "n_poses_requested": 10,
+        "n_poses_to_save": 10
+    },
+    "files": {
+        "minimized_pose": "tests/applications/autodock/data_for_test/ester/1AQL_chain_A/docking_results/minimized_pose.pdbqt",
+        "docked_poses": "tests/applications/autodock/data_for_test/ester/1AQL_chain_A/docking_results/docked_poses.pdbqt",
+        "log_file": "tests/applications/autodock/data_for_test/ester/1AQL_chain_A/docking_results/docking.log"
+    }
+}
