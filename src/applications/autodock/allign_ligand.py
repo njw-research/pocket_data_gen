@@ -7,7 +7,8 @@ import subprocess
 def align_ligand(input_sdf: str, 
                 output_sdf: str,
                 protein_com: np.ndarray,
-                active_site_com: np.ndarray) -> str:
+                active_site_com: np.ndarray,
+                centre: bool = False) -> str:
     """
     Align ligand based on protein and active site vectors
     
@@ -82,7 +83,10 @@ def align_ligand(input_sdf: str,
         rotated_coord = rotation_matrix @ coord
         
         # Translate oxygen COM to active site COM
-        final_coord = rotated_coord + active_site_com # + oxygen_com
+        if centre:
+            final_coord = rotated_coord - np.mean(rotated_coord, axis=0)
+        else:
+            final_coord = rotated_coord + active_site_com 
         
         # Update position
         conf.SetAtomPosition(atom.GetIdx(), final_coord)
@@ -137,7 +141,8 @@ def prepare_ligand(ligand_path: str,
                     active_site_com: np.ndarray,
                     protein_com: np.ndarray = np.zeros(3, dtype=np.float32),
                     from_smiles: bool=False,
-                    ligand_smiles: str=None) -> str:
+                    ligand_smiles: str=None,
+                    centre: str = False) -> str:
     """
     Modified prepare_ligand function to align ligand with protein vector
     """
@@ -172,7 +177,8 @@ def prepare_ligand(ligand_path: str,
             ligand_sdf,
             ligand_sdf_aligned,
             protein_com,
-            active_site_com
+            active_site_com,
+            centre=centre
         )
         print(f"Aligned ligand: {sdf_aligned}")
         

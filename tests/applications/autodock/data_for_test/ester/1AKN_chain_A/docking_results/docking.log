@@ -118,3 +118,23 @@
 2025-02-03 10:49:21,290 - INFO - Saved scores and energies to: tests/applications/autodock/data_for_test/ester/1AKN_chain_A/docking_results/docking_scores.json
 2025-02-03 10:49:21,290 - INFO - Docking completed successfully
 2025-02-03 10:49:21,290 - INFO - Docking completed successfully
+2025-02-04 14:30:34,401 - INFO - Loading enzyme from: tests/applications/autodock/data_for_test/ester/1AKN_chain_A/1AKN_altloc_removed_com.pdbqt
+2025-02-04 14:30:34,411 - INFO - Loading enzyme from: tests/applications/autodock/data_for_test/ester/1AQL_chain_A/1AQL_altloc_removed_com.pdbqt
+2025-02-04 14:30:34,443 - INFO - Loading ligand from: tests/applications/autodock/data_for_test/ester/1AKN_chain_A/ester_aligned.pdbqt
+2025-02-04 14:30:34,443 - INFO - Loading ligand from: tests/applications/autodock/data_for_test/ester/1AQL_chain_A/ester_aligned.pdbqt
+2025-02-04 14:30:34,554 - INFO - Computing Vina maps (center=[3.128999710083008, 6.297667026519775, 4.644999980926514], box_size=[40, 40, 40])
+2025-02-04 14:30:34,554 - INFO - Computing Vina maps (center=[5.726333141326904, 6.013000011444092, 1.898999810218811], box_size=[40, 40, 40])
+2025-02-04 14:30:35,461 - INFO - Score before minimization: 161.885 (kcal/mol)
+2025-02-04 14:30:36,345 - INFO - Score before minimization: 130.081 (kcal/mol)
+2025-02-04 14:30:36,346 - INFO - Score after minimization: -0.258 (kcal/mol)
+2025-02-04 14:30:36,346 - INFO - Score after minimization: -1.088 (kcal/mol)
+2025-02-04 14:30:36,347 - INFO - Saved minimized pose to: tests/applications/autodock/data_for_test/ester/1AKN_chain_A/docking_results/minimized_pose.pdbqt
+2025-02-04 14:30:36,347 - INFO - Saved minimized pose to: tests/applications/autodock/data_for_test/ester/1AQL_chain_A/docking_results/minimized_pose.pdbqt
+2025-02-04 14:30:36,347 - INFO - Starting docking (exhaustiveness=32, n_poses=10)
+2025-02-04 14:30:36,347 - INFO - Starting docking (exhaustiveness=32, n_poses=10)
+2025-02-04 14:31:01,508 - INFO - Saved 10 docked poses to: tests/applications/autodock/data_for_test/ester/1AQL_chain_A/docking_results/docked_poses.pdbqt
+2025-02-04 14:31:01,509 - INFO - Saved 10 docked poses to: tests/applications/autodock/data_for_test/ester/1AKN_chain_A/docking_results/docked_poses.pdbqt
+2025-02-04 14:31:01,510 - INFO - Saved scores and energies to: tests/applications/autodock/data_for_test/ester/1AQL_chain_A/docking_results/docking_scores.json
+2025-02-04 14:31:01,510 - INFO - Saved scores and energies to: tests/applications/autodock/data_for_test/ester/1AKN_chain_A/docking_results/docking_scores.json
+2025-02-04 14:31:01,510 - INFO - Docking completed successfully
+2025-02-04 14:31:01,510 - INFO - Docking completed successfully

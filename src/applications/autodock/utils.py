@@ -38,15 +38,6 @@ def prepare_enzyme(enzyme_path: str,
     logger = logging.getLogger(__name__)
     
     try:
-        # # Create Path objects
-        # enzyme_path = Path(enzyme_path)
-        # enzyme_dir = enzyme_path.parent
-        
-        # # Create output paths
-        # enzyme_pdb = f'{enzyme_path}.pdb'
-        # enzyme_pdb_com = f'{enzyme_path}_com.pdb'
-        # enzyme_pdbqt = f'{enzyme_path}_com.pdbqt'
-
         # Create Path object and handle extensions
         enzyme_path = Path(enzyme_path)
         enzyme_dir = enzyme_path.parent
@@ -117,7 +108,10 @@ def prepare_enzyme(enzyme_path: str,
         raise
 
 
-def prepare_vina_files(pdb_dir: str, sdf_dir: str, base_output_dir: str) -> list:
+def prepare_vina_files(pdb_dir: str, 
+                       sdf_dir: str, 
+                       base_output_dir: str,
+                       centre: bool = False) -> list:
     """
     Prepare all PDB and SDF files for Vina docking
     
@@ -190,7 +184,8 @@ def prepare_vina_files(pdb_dir: str, sdf_dir: str, base_output_dir: str) -> list
                 # Prepare ligand
                 ligand_pdbqt = prepare_ligand(
                     ligand_path=str(new_sdf.with_suffix('')),
-                    active_site_com=mean_act_site
+                    active_site_com=mean_act_site,
+                    centre=centre
                 )
                 
                 # Store preparation information
@@ -224,77 +219,3 @@ def prepare_vina_files(pdb_dir: str, sdf_dir: str, base_output_dir: str) -> list
     
     return prep_info_list
 
-
-
-# def prepare_ligand(ligand_path, 
-#                    target_com: np.array = None, 
-#                    from_smiles: bool=False, 
-#                    ligand_smiles: str=None):
-#     """
-#     Prepare ligand file for AutoDock Vina with center of mass shifting
-    
-#     Parameters:
-#     -----------
-#     ligand_path : str
-#         Path to ligand file (without extension)
-#     from_smiles : bool, optional
-#         Whether to generate SDF from SMILES first
-#     ligand_smiles : str, optional
-#         SMILES string if starting from SMILES
-    
-#     Returns:
-#     --------
-#     dict
-#         Paths to prepared ligand files
-#     """
-#     try:
-#         # # Create output paths
-#         # ligand_sdf = f'{ligand_path}.sdf'
-#         # ligand_sdf_com = f'{ligand_path}_com.sdf'
-#         # ligand_pdbqt = f'{ligand_path}_com.pdbqt'
-        
-#         # Create Path object and handle extensions
-#         ligand_path = Path(ligand_path)
-#         ligand_dir = ligand_path.parent
-        
-#         # Ensure path has no extension for creating new files
-#         ligand_stem = ligand_path.stem
-#         if ligand_path.suffix != '.sdf':
-#             ligand_sdf = str(ligand_path) + '.sdf'
-#         else:
-#             ligand_sdf = str(ligand_path)
-#             ligand_stem = ligand_path.stem
-            
-#         # Create output paths using stem
-#         ligand_sdf_com = str(ligand_dir / f"{ligand_stem}_com.sdf")
-#         ligand_pdbqt = str(ligand_dir / f"{ligand_stem}_com.pdbqt")
-        
-#         # Generate SDF from SMILES if requested
-#         if from_smiles and ligand_smiles:
-#             subprocess.run([
-#                 'scrub.py',
-#                 ligand_smiles,
-#                 '-o', ligand_sdf
-#             ], check=True)
-#             print(f"Generated SDF from SMILES: {ligand_sdf}")
-        
-#         # Shift center of mass for ligand
-#         sdf_shifted = centre_of_mass_shift_sdf(ligand_sdf, ligand_sdf_com, target_com)
-#         print(f"Shifted ligand center of mass: {sdf_shifted}")
-        
-#         # Prepare ligand PDBQT
-#         subprocess.run([
-#             'mk_prepare_ligand.py',
-#             '-i', sdf_shifted,
-#             '-o', ligand_pdbqt
-#         ], check=True)
-#         print(f"Prepared ligand PDBQT: {ligand_pdbqt}")
-        
-#         return ligand_pdbqt
-        
-#     except subprocess.CalledProcessError as e:
-#         print(f"Error in subprocess: {e}")
-#         raise
-#     except Exception as e:
-#         print(f"Error preparing ligand: {str(e)}")
-#         raise
