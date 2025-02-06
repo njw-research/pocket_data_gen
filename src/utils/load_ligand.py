@@ -48,6 +48,8 @@ def multi_pdb_to_single_sdf(
     mol = Chem.MolFromPDBFile(ligand_pdb, removeHs=False)  # Keep existing hydrogens
     mol = Chem.AddHs(mol, addCoords=True)  # Add any missing hydrogens with 3D coordinates
 
+    output_list = []
+
     # Process each conformer
     for i, conf in enumerate(mol.GetConformers()):
         # Create a new molecule for this conformer
@@ -62,8 +64,10 @@ def multi_pdb_to_single_sdf(
         writer = Chem.SDWriter(output_file)
         writer.write(conf_mol)
         writer.close()
-
         print(f"Saved: {output_file}")
+        output_list.append(output_file)
+
+    return output_list
 
 
 if __name__ == "__main__":

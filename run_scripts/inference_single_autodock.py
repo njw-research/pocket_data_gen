@@ -1,9 +1,8 @@
 from xyme_tools.structure_prediction import (
     StructurePredictionInput,
-    StructurePredictionOutput,
 )
 from xyme_tools.structure_prediction.tool_classes import AutoDock
-from xyme_tools.general.custom_typing import subdir_to_path, path_to_subdir
+from xyme_tools.general.custom_typing import path_to_subdir
 from xyme_tools.general.utils import set_working_dir
 import numpy as np
 from src.applications.autodock.run_docking import setup_docking

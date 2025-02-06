@@ -152,7 +152,7 @@ def submit_autodock_jobs(input_dir: str, base_output_dir: str) -> list:
     # Find all relevant files recursively
     pdb_files = glob.glob(os.path.join(input_dir, "**/*_altloc_removed_com.pdb"), recursive=True)
     sdf_files = glob.glob(os.path.join(input_dir, "**/*_aligned.sdf"), recursive=True)
-    residue_files = glob.glob(os.path.join(input_dir, "**/active_site.txt"), recursive=True)
+    glob.glob(os.path.join(input_dir, "**/active_site.txt"), recursive=True)
 
     print(f"Found {len(pdb_files)} PDB files and {len(sdf_files)} SDF files")
     

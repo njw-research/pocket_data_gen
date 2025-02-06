@@ -1,5 +1,3 @@
-from pathlib import Path
-import multiprocessing
 import argparse
 from src.applications.autodock.parallel_docking.utils import find_docking_inputs, BatchProcessor
 
